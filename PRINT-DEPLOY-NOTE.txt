@@ -1,0 +1,15 @@
+POS CHOP ETISH YANGILANISHI
+
+1) Frontend loyihani odatdagidek qayta build/deploy qiling.
+2) Supabase Edge Function `api` ichiga updatePosSaleStatusFn handleri qo'shilgan.
+   Supabase CLI ishlatsangiz loyiha ildizida:
+       supabase functions deploy api
+   Supabase Dashboard orqali deploy qilsangiz, `supabase/functions/api/index.ts`
+   va `supabase/functions/api/handlers.ts` dagi yangilangan kodni `api` funksiyasiga
+   joylab qayta deploy qiling.
+3) Chop etish oynasida printer sifatida haqiqiy termal printerni tanlang.
+   Agar `Microsoft Print to PDF` tanlansa, Windows PDF saqlash oynasini ochadi;
+   sayt buni apparat printeriga o'zgartira olmaydi.
+
+Brauzer chop etish oynasi `afterprint` hodisasini ham Chop etish, ham Bekor qilish
+holatida yuboradi. Shu sababli dastur yakuniy holatni alohida tasdiqlash orqali oladi.

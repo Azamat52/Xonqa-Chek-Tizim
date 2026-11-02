@@ -1,0 +1,746 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-overlay: oklch(0 0 0);
+  --color-gold: var(--gold);
+  --shadow-glow: 0 0 0 1px oklch(0.72 0.19 48 / 25%), 0 18px 45px -22px oklch(0.72 0.19 48 / 45%);
+}
+
+:root {
+  color-scheme: dark;
+  --gold: oklch(0.76 0.1 75);
+  --radius: 0.25rem;
+  --background: oklch(0.2 0.009 60);
+  --foreground: oklch(0.94 0.025 80);
+  --card: oklch(0.235 0.012 60);
+  --card-foreground: oklch(0.97 0.008 80);
+  --popover: oklch(0.235 0.012 60);
+  --popover-foreground: oklch(0.97 0.008 80);
+  --primary: oklch(0.64 0.19 40);
+  --primary-foreground: oklch(0.99 0.005 80);
+  --secondary: oklch(0.27 0.018 62);
+  --secondary-foreground: oklch(0.95 0.01 80);
+  --muted: oklch(0.255 0.015 62);
+  --muted-foreground: oklch(0.7 0.03 70);
+  --accent: oklch(0.76 0.1 75 / 18%);
+  --accent-foreground: oklch(0.97 0.008 80);
+  --destructive: oklch(0.6 0.22 22);
+  --destructive-foreground: oklch(0.98 0.005 80);
+  --success: oklch(0.7 0.16 150);
+  --success-foreground: oklch(0.18 0.03 150);
+  --warning: oklch(0.8 0.15 88);
+  --warning-foreground: oklch(0.2 0.03 88);
+  --info: oklch(0.7 0.13 235);
+  --info-foreground: oklch(0.17 0.03 235);
+  --border: oklch(0.94 0.025 80 / 14%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.64 0.19 40 / 60%);
+  --chart-1: oklch(0.64 0.19 40);
+  --chart-2: oklch(0.7 0.16 150);
+  --chart-3: oklch(0.7 0.13 235);
+  --chart-4: oklch(0.76 0.1 75);
+  --chart-5: oklch(0.66 0.18 12);
+  --sidebar: oklch(0.17 0.008 60);
+  --sidebar-foreground: oklch(0.95 0.01 80);
+  --sidebar-primary: oklch(0.64 0.19 40);
+  --sidebar-primary-foreground: oklch(0.18 0.02 50);
+  --sidebar-accent: oklch(0.26 0.018 60);
+  --sidebar-accent-foreground: oklch(0.97 0.008 80);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.735 0.185 48 / 60%);
+}
+
+.light {
+  color-scheme: light;
+  --background: oklch(0.94 0.025 80);
+  --foreground: oklch(0.22 0.014 63);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.6 0.19 40);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.94 0.007 72);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.94 0.004 80);
+  --muted-foreground: oklch(0.48 0.013 72);
+  --accent: oklch(0.94 0.016 55);
+  --accent-foreground: var(--foreground);
+  --border: oklch(0.22 0.014 63 / 14%);
+  --input: oklch(0.22 0.014 63 / 20%);
+  --ring: oklch(0.62 0.175 48 / 60%);
+  --sidebar: oklch(0.96 0.005 72);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: oklch(0.92 0.01 72);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+[data-density="compact"] .admin-main {
+  padding: 1rem;
+}
+
+[data-density="compact"] .admin-main td,
+[data-density="compact"] .admin-main th {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility panel {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 1px 2px oklch(0 0 0 / 25%);
+}
+
+.font-brand {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--gold);
+}
+
+body {
+  margin: 0;
+}
+
+.admin-shell {
+  min-height: 100dvh;
+}
+
+.admin-main {
+  width: 100%;
+  max-width: 1800px;
+  margin-inline: auto;
+  overflow-wrap: anywhere;
+}
+
+.admin-main [hidden] {
+  display: none;
+}
+
+.admin-main .panel {
+  min-width: 0;
+}
+
+.mobile-header {
+  width: 100%;
+}
+
+.mobile-tabbar {
+  position: fixed;
+  bottom: 0;
+  inset-inline: 0;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-top: 1px solid var(--border);
+  background: var(--sidebar);
+  padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+}
+
+.mobile-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  height: 58px;
+  padding: 6px 2px;
+  gap: 5px;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.mobile-tab svg {
+  display: block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.mobile-tab span {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.mobile-tab .relative > span {
+  position: absolute;
+  top: -7px;
+  left: 12px;
+  margin: 0;
+  font-size: 9px;
+}
+
+.mobile-main,
+[data-density="compact"] .mobile-main {
+  padding-bottom: calc(90px + env(safe-area-inset-bottom));
+}
+
+.mobile-more {
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+}
+
+@media (max-width: 767px) {
+  .admin-shell {
+    flex-direction: column;
+  }
+
+  .admin-main input,
+  .admin-main select,
+  .admin-main textarea,
+  [role="dialog"] input,
+  [role="dialog"] select,
+  [role="dialog"] textarea {
+    min-width: 0;
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .admin-main input[type="time"],
+  [role="dialog"] input[type="datetime-local"] {
+    width: 100%;
+  }
+
+  .admin-main button:not(.order-card) {
+    min-height: 40px;
+  }
+
+  [role="dialog"] {
+    overflow-wrap: anywhere;
+  }
+
+  [role="dialog"] input {
+    min-height: 40px;
+  }
+
+  .stat-value {
+    font-size: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes topbar {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+select option,
+select optgroup {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* =========================================================
+   CHEK CHOP ETISH SOZLAMALARI
+   55 mm termal printer
+   ========================================================= */
+:root {
+  --receipt-paper: #ffffff;
+  --receipt-ink: #000000;
+}
+
+.receipt-print {
+  display: none;
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  html,
+  body {
+    width: 55mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: var(--receipt-paper) !important;
+  }
+
+  #pos-receipt,
+  #pos-receipt * {
+    visibility: visible !important;
+    color: var(--receipt-ink) !important;
+  }
+
+  #pos-receipt {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 55mm !important;
+    min-width: 0 !important;
+    max-width: 55mm !important;
+    height: auto !important;
+    min-height: 0 !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 2mm !important;
+    overflow: visible !important;
+    background: var(--receipt-paper) !important;
+    color: var(--receipt-ink) !important;
+    font: 7px Arial, sans-serif !important;
+    line-height: 1.2 !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  #root {
+    height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Sarlavha */
+  #pos-receipt .receipt-heading {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    padding-bottom: 1.5mm !important;
+    margin-bottom: 1mm !important;
+    border-bottom: 1px dashed var(--receipt-ink) !important;
+  }
+
+  #pos-receipt h1 {
+    max-width: 100% !important;
+    margin: 0 0 2mm !important;
+    font: bold 13px Arial, sans-serif !important;
+    letter-spacing: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  #pos-receipt p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #pos-receipt .receipt-heading p {
+    margin: 0 0 2mm !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  #pos-receipt .receipt-id {
+    display: block !important;
+    width: 100% !important;
+    font-size: 7px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Sotuvchi va mijoz ma'lumotlari */
+  #pos-receipt .receipt-info {
+    width: 100% !important;
+    margin: 1.5mm 0 !important;
+  }
+
+  #pos-receipt .receipt-info p {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 1mm !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  #pos-receipt .receipt-info b {
+    white-space: nowrap !important;
+  }
+
+  /* Mahsulotlar jadvali */
+  #pos-receipt .receipt-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    font: 6px Arial, sans-serif !important;
+    color: var(--receipt-ink) !important;
+  }
+
+  /* Ustunlar jami 100% */
+  #pos-receipt .receipt-name {
+    width: 30% !important;
+  }
+
+  #pos-receipt .receipt-qty {
+    width: 22% !important;
+  }
+
+  #pos-receipt .receipt-price {
+    width: 26% !important;
+  }
+
+  #pos-receipt .receipt-total-column {
+    width: 22% !important;
+  }
+
+  #pos-receipt .receipt-table th,
+  #pos-receipt .receipt-table td {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 0.7mm 0.3mm !important;
+    border: 1px solid var(--receipt-ink) !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.2 !important;
+  }
+
+  #pos-receipt .receipt-table th {
+    font-size: 6px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+  }
+
+  #pos-receipt .receipt-table td {
+    font-size: 6px !important;
+  }
+
+  #pos-receipt .receipt-table td:first-child {
+    text-align: left !important;
+  }
+
+  #pos-receipt .receipt-cell-line {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Masalan: 0,2 kg yoki 2 dona */
+  #pos-receipt .receipt-quantity {
+    font-size: 6px !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Masalan: 66 000 (1 kg) */
+  #pos-receipt .receipt-unit-price {
+    font-size: 5px !important;
+    letter-spacing: -0.2px !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+  }
+
+  #pos-receipt .receipt-item-total {
+    font-size: 6px !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+  }
+
+  #pos-receipt .receipt-table tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  #pos-receipt .receipt-table thead {
+    display: table-header-group !important;
+  }
+
+  /* Umumiy summa */
+  #pos-receipt .receipt-total {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    gap: 1mm !important;
+    margin-top: 1.5mm !important;
+    font-size: 10px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+  }
+
+  #pos-receipt .receipt-total b {
+    min-width: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  #pos-receipt .receipt-total b:last-child {
+    text-align: right !important;
+  }
+
+  /* Rahmat yozuvi */
+  #pos-receipt .receipt-thanks {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-top: 1.5mm !important;
+    margin: 0 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Chek oxiridagi chiziq */
+  #pos-receipt .receipt-end {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 2mm !important;
+    font-size: 7px !important;
+    letter-spacing: 0.3px !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: clip !important;
+  }
+}
+
+/* Savdo kartalari */
+.sale-card {
+  --sale-c: var(--success);
+  border-left: 4px solid var(--sale-c);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease,
+    background-color 0.35s ease;
+  animation: sale-in 0.5s ease both;
+}
+
+.sale-card[data-status="saved"] {
+  --sale-c: var(--info);
+}
+
+.sale-card[data-status="cancelled"] {
+  --sale-c: var(--destructive);
+}
+
+.sale-card:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -18px color-mix(in oklch, var(--sale-c) 70%, transparent);
+}
+
+.sale-card.is-open {
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in oklch, var(--sale-c) 8%, transparent),
+    transparent 60%
+  );
+}
+
+.sale-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.45s ease;
+}
+
+.sale-details[data-open="true"] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.sale-filter {
+  --sale-c: var(--muted-foreground);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.sale-filter-printed {
+  --sale-c: var(--success);
+}
+
+.sale-filter-saved {
+  --sale-c: var(--info);
+}
+
+.sale-filter-cancelled {
+  --sale-c: var(--destructive);
+}
+
+.sale-filter-all {
+  --sale-c: var(--primary);
+}
+
+.sale-filter:hover {
+  border-color: var(--sale-c);
+  color: var(--sale-c);
+}
+
+.sale-filter.is-active {
+  background: color-mix(in oklch, var(--sale-c) 18%, transparent);
+  border-color: var(--sale-c);
+  color: var(--sale-c);
+  font-weight: 600;
+}
+
+.sale-filter-count {
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--sale-c) 22%, transparent);
+  padding: 0 0.45rem;
+  font-size: 0.75rem;
+}
+
+.pos-product {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.pos-product:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  background: var(--accent);
+}
+
+.pos-product:active {
+  transform: scale(0.98);
+}
+
+@keyframes sale-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

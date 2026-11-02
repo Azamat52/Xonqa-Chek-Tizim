@@ -1,0 +1,27 @@
+XONQA POS — PRODUCT UNIT FIX
+
+Changed frontend files:
+- src/admin/lib/units.js
+- src/store/saleSlice.js
+- src/store/dataSlice.js
+- src/admin/pages/Products.jsx
+- src/test/units.test.js
+
+Required Supabase migration:
+- supabase/migrations/20261102000000_normalize_legacy_product_units.sql
+
+IMPORTANT:
+1. Push/pull these project files to GitHub and deploy the frontend/Edge Function as usual.
+2. Open Supabase Dashboard > SQL Editor.
+3. Open the migration file above, copy its FULL contents, paste into SQL Editor and Run.
+   GitHub pull alone does not execute SQL migrations unless your deployment pipeline is configured to do so.
+4. Reload the POS page and try the problematic product again.
+
+The migration converts legacy unit values such as dona, gramm, litr and qadoq into
+piece, g, l and pack. Unknown legacy unit values are safely normalized to piece.
+The database sale function also normalizes units at write time, so old product data
+cannot violate pos_sale_items_unit_check during a sale.
+
+Validation performed:
+- npm test: 22 tests passed.
+- npm run build could not be run in this environment because npm ci timed out and Vite was not installed.
